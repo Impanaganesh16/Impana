@@ -1,0 +1,115 @@
+list out 10 Basic linux command.
+1.	Ls ..lists all directories and files    
+2.	  man  ..gives manual for any command
+3.	  mkdir  … creates directory
+4.	   Rm… removes files or directories
+5.	  cd  ..changes directory
+6.	 Pwd  …print working directory
+7.	   touch  …creates an empty file
+8.	   Cat …opens file 
+9.	Vi … creates and opens file and can edit by opening file
+10.	Sed …can edit file without opening file    
+
+
+
+what kind of task u have done on Linux? 
+
+All the commands which are explained in class , its flags and execution with different examples.....man, hostname ,env, echo, export,tar,scp, cd, mkdir, ls, who, whoami , W, rm, cat, touch, ifconfig, vi,sed, find, awk, add user, addgrp, deluser, chmod, chown,ping, telnet, ps, top, more,hardlink, pipe, semicoln,du, df,dh,cp, mv, free, lsb_release, Uname,history, wc ,softlink,  
+
+
+
+how to collect the threads when cpu utilization is very high? how do you slove the issue? 
+Collecting threads    
+ top -b -H -p PID
+Solution	
+   Kill or restart processes, Update system apps and drivers, Reinstall or downgrade apps
+
+	
+
+
+list out 10 new linux command not heard till now with one liner details.
+1.	W .. shows the information about the users currently on the machine and their process(shows who is logged on and what they are doing)
+2.	less - Linux command to display paged outputs in the terminal
+3.	diff - Find the difference between two files
+4.	cmp - Allows you to check if two files are identical
+5.	comm - Combines the functionality of diff and cmp
+6.	sort - Linux command to sort the content of a file while outputting
+7.	service - Linux command to start and stop services
+8.	mount - Mount file systems in Linux
+9.	ufw - Firewall command
+10.	alias - Create custom shortcuts for your regularly used commands
+
+
+
+
+what is adhoc commands?
+
+Ad hoc commands are commands which can be run individually to perform quick functions.(allows to create wireless network without central access point) 
+	These ad-hoc commands are not used for configuration management and deployment, because these commands are of one time usage.
+ansible-playbook is used for configuration management and deployment
+
+
+
+
+Cmd to find Particular process running
+
+Ps -aef  | grep (PID)
+
+
+
+Write a adhoc command to copy a file from local to remote machine!? 
+
+The copy module –  to copy files from ansible control machine local to the remote machine,
+
+ host/host group ansible remoteserver1 -m copy -a "src=~/Downloads/index.html dest=/var/www/html owner=apache group=apache mode=0644"
+
+
+
+
+If the pid of Java application is missing what can be the reason how do u troubleshoot
+
+If pid of Java is killed it won't work to find the pid 
+             Ps -aef |grep Java
+
+
+
+
+Difference between cp and scp
+
+cp stands for copy file, used to copy files locally from one directory to another.
+scp stands for secure copy, which is used to copy files over a network.(Basically copy file from one computer to another) It requires authentication like host-address and user name. It uses ssh as underneath protocol.
+
+
+
+
+If i want to check which port is used by witch process!? How will u get it!? 
+
+if you want to see from the OS layer which process is using which port netstat could be enough but you might need to go as hard as using lsof , strace or even setup auditd to log the port usages, to check the port traffic you’d use tcpdump or other similar tools
+
+
+hot to Remove empty lines from file?
+
+$ sed '/^$/d' filename
+
+
+I have a file with 3 fields (EmpName, EmpNumber, EmpMailid) 
+	1. Just print the EmpMailid as output 
+
+Awk {print $NF} filename   or    Awk {print $3F} filename
+ 
+	2. print mailid of particular employee
+
+awk '/ EmpName | EmpMailid /' filename
+
+
+	
+how you do the connection between the servers
+
+ssh -username@server IP
+
+
+
+how to generate the key on a linux michine
+
+ssh -keygen
+ 
